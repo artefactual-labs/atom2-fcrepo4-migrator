@@ -6,19 +6,25 @@ dist: xenial # required for Python >= 3.7
 language: python
 cache: pip
 
+services:
+  - mysql
+
+before_install:
+  - mysql -e 'CREATE DATABASE IF NOT EXISTS test;'
+
+install: true
+
 before_script:
   - pip install tox
 
 script: tox
 
-install: true
-
 notifications:
   email: false
 
-matrix:
-  fast_finish: true
-  include:
-
-    - python: "3.7"
-      env: TOXENV=py37
+env: 
+  TOXENV=py37
+  DB_HOST=localhost
+  DB_USER=Travis
+  DB_PASS=
+  DB_PORT=3306
