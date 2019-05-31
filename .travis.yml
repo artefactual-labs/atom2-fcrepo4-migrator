@@ -4,6 +4,8 @@ sudo: false
 
 dist: xenial # required for Python >= 3.7
 language: python
+python:
+  - 3.7
 cache: pip
 
 services:
@@ -15,14 +17,14 @@ before_install:
 install: true
 
 before_script:
-  - pip install tox
+  - pip3 install tox
 
 script: tox
 
 notifications:
   email: false
 
-env: 
+env:
   TOXENV=py37
   DB_HOST=localhost
   DB_USER=Travis
