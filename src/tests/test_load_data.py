@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
 
-import os
 import load_data
 
 
-def test_parse_args():
-    assert load_data.parse_args(['--db', os.environ.get('DB_NAME')]) == 'test'
+def test_get_db_config():
+    config = load_data.get_db_config('--db=test')
+
+    assert config['dbname'] == 'test'
