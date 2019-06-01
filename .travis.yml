@@ -25,7 +25,7 @@ notifications:
   email: false
 
 env:
-  TOXENV=py37
+  TOXENV=py36
   DB_HOST=localhost
   DB_USER=Travis
   DB_PASS=
