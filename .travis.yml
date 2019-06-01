@@ -30,3 +30,4 @@ env:
   DB_USER=Travis
   DB_PASS=
   DB_PORT=3306
+  DB_NAME=test
