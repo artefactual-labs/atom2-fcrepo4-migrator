@@ -67,9 +67,10 @@ Vagrant.configure("2") do |config|
     apt-get update
     apt-get install -y \
       mariadb-server \
+      libmysqlclient-dev \
       python3 \
       python3-pip \
-      libmysqlclient-dev
+      tox
     /usr/bin/pip3 install -r /vagrant/requirements.txt
   SHELL
 end
